@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+//    id 'war'
+    id 'org.springframework.boot' version '3.3.0'
+    id 'io.spring.dependency-management' version '1.1.5'
+}
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "joda-time:joda-time:2.2"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    // implementation "org.json:json:20231013"
+    implementation "com.google.code.gson:gson:2.10.1"
+    implementation "com.mysql:mysql-connector-j:8.4.0"
+    // implementation ("org.springframework.boot:spring-boot-starter-web"){
+    //     exclude module: "spring-boot-starter-tomcat"
+    //     exclude group: "org.apache.tomcat"
+    // }
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation "junit:junit:4.12"
+}
+
+jar {
+    enabled = false
+    archiveBaseName = 'simplews'
+    archiveVersion =  '0.1.0'
+}
+
+bootJar {
+    enabled = true
+    archiveBaseName = 'simplews'
+    archiveVersion =  '0.1.0'
+}
+
+// war {
+//   enabled = true
+// }
